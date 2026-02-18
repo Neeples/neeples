@@ -7,7 +7,7 @@ export default function Videos() {
   const videos = [
     {
       id: 'highlight',
-      title: 'She May Own Me',
+      title: 'New Video – She May Own Me',
       youtubeId: '5rvb63CXq6s',
       featured: true,
     },
@@ -50,30 +50,30 @@ export default function Videos() {
           </p>
         </div>
         
-        {/* Featured Video - Full Width */}
-        <div className="mb-16 md:mb-24">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-accent uppercase tracking-wider">
-              {t('videos.featured')}
-            </h3>
-          </div>
-          <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow max-w-4xl mx-auto">
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${videos[0].youtubeId}`}
-                title={videos[0].title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+        {/* Videos Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          {/* Featured Video - Full Width on Desktop */}
+          <div className="lg:col-span-2 mb-8">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-accent uppercase tracking-wider">
+                {videos[0].title}
+              </h3>
+            </div>
+            <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${videos[0].youtubeId}`}
+                  title={videos[0].title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
-        </div>
-        
-        {/* Spells Video - Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Video Column */}
+          
+          {/* Spells Video - Left Column */}
           <div className="flex flex-col">
             <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow">
               <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
@@ -87,17 +87,12 @@ export default function Videos() {
                 />
               </div>
             </div>
-            <div className="mt-6 text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-accent uppercase tracking-wider">
-                {videos[1].title}
-              </h3>
-            </div>
           </div>
           
-          {/* Exhibitions and Mentions Column */}
+          {/* Exhibitions and Mentions - Right Column */}
           <div className="flex flex-col justify-start">
             <h3 className="text-2xl font-bold text-accent uppercase tracking-wider mb-6">
-              {t('videos.exhibitions')}
+              {videos[1].title} – {t('videos.exhibitions')}
             </h3>
             <p className="text-base text-muted-foreground mb-8 leading-relaxed">
               {t('videos.spellsDescription')}
