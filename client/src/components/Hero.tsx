@@ -53,12 +53,12 @@ export default function Hero() {
         <div className="space-y-6 max-w-3xl">
           {/* EP Label */}
           <p className="text-sm md:text-base text-accent/80 font-semibold tracking-widest uppercase">
-            {t('hero.subtitle')}
+            {newEpLabel}
           </p>
           
           {/* EP Title */}
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight glitch" data-text={t('hero.tagline')}>
-            {t('hero.tagline')}
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight glitch" data-text={epTitleDisplay}>
+            {epTitleDisplay}
           </h2>
           
 

@@ -1,25 +1,39 @@
-import { useContent } from "@/contexts/ContentContext";
-import { Loader2 } from "lucide-react";
+import About from '@/components/About';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import Gallery from '@/components/Gallery';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Music from '@/components/Music';
+import Shows from '@/components/Shows';
+import Videos from '@/components/Videos';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
+/**
+ * Industrial Apocalypse Design System
+ * - Dark background (#0a0a0a) with orange/red accents
+ * - Glitch effects on titles (Rubik Glitch font)
+ * - Glow effects on interactive elements
+ * - Diagonal cuts between sections
+ * - Brutal, honest aesthetic reflecting Stoner Rock identity
+ * - Fonts: Rubik Glitch (titles) + Google Sans (body)
+ */
 export default function Home() {
-  const { t, isLoading } = useContent();
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <main className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-4">{t("hero.subtitle")}</h1>
-        <p className="text-xl text-muted-foreground mb-8">{t("hero.tagline")}</p>
-        <p className="text-lg mb-4">{t("about.title")}</p>
-        <p className="text-muted-foreground">{t("about.description")}</p>
-      </main>
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header />
+        <main>
+          <Hero />
+          <Music />
+          <Shows />
+          <Videos />
+          <Gallery />
+          <About />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

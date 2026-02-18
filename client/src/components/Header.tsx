@@ -1,6 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Menu, X, LayoutDashboard } from 'lucide-react';
-import { Link } from 'wouter';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const LOGO_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028700343/nGIirnuVPFagSene.png';
@@ -55,13 +54,6 @@ export default function Header() {
           ))}
         </nav>
         
-        {/* Dashboard Link */}
-        <div className="hidden lg:flex items-center gap-4">
-          <Link href="/dashboard" className="p-2 text-muted-foreground hover:text-primary transition-colors" title="Dashboard">
-            <LayoutDashboard size={20} />
-          </Link>
-        </div>
-
         {/* Language Switcher & Mobile Menu */}
         <div className="flex items-center gap-4">
           <div className="flex gap-2">
