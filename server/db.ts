@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, content } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -87,6 +87,35 @@ export async function getUserByOpenId(openId: string) {
   const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
 
   return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getContentByLanguage(language: string) {
+  const db = await getDb();
+  if (!db) return {};
+
+  const result = await db.select().from(content).where(eq(content.language, language));
+  const contentMap: Record<string, string> = {};
+  result.forEach(item => {
+    contentMap[item.key] = item.value;
+  });
+  return contentMap;
+}
+
+export async function updateContent(language: string, key: string, value: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const existing = await db.select().from(content)
+    .where(and(eq(content.language, language), eq(content.key, key)))
+    .limit(1);
+
+  if (existing.length > 0) {
+    await db.update(content)
+      .set({ value, updatedAt: new Date() })
+      .where(and(eq(content.language, language), eq(content.key, key)));
+  } else {
+    await db.insert(content).values({ language, key, value });
+  }
 }
 
 // TODO: add feature queries here as your schema grows.
