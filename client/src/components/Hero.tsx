@@ -16,8 +16,8 @@ export default function Hero() {
   
 
   
-  const newEpLabel = language === 'pt-BR' ? 'Novo EP' : 'New EP';
-  const epTitleDisplay = 'The World Is Ending\nAnd This Frog Knows It!'
+  const newEpLabel = t('hero.label');
+  const epTitleDisplay = t('hero.title')
   
   return (
     <section 
@@ -69,7 +69,7 @@ export default function Hero() {
           onClick={scrollToMusic}
           className="mt-8 px-8 py-3 border-2 border-accent text-accent font-bold uppercase tracking-widest hover:bg-accent hover:text-background transition-all duration-300 fire-glow"
         >
-          {t('music.title')}
+          {t('hero.cta')}
         </button>
       </div>
       

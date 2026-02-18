@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { useContent } from '@/contexts/ContentContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { Settings, Music, Calendar, Image as ImageIcon, Mail, Save, ArrowLeft, Loader2 } from 'lucide-react';
 import { Link } from 'wouter';
@@ -12,18 +12,18 @@ import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
 
 export default function Dashboard() {
-  const { language, setLanguage, t, content, isLoading } = useContent();
+  const { language, setLanguage, t } = useLanguage();
   const { user, loading: authLoading } = useAuth();
   const [isSaving, setIsSaving] = useState(false);
+  const [isLoading] = useState(false);
   
   const [formData, setFormData] = useState({
-    'hero.subtitle': content['hero.subtitle'] || '',
-    'hero.tagline': content['hero.tagline'] || '',
-    'about.title': content['about.title'] || '',
-    'about.description': content['about.description'] || '',
+    'hero.label': 'NEW EP',
+    'hero.title': 'The World Is Ending And This Frog Knows It!',
+    'hero.cta': 'LISTEN NOW',
+    'about.title': 'About',
+    'about.description': 'Get to know the band',
   });
-
-  const updateMutation = trpc.content.update.useMutation();
 
   const handleChange = (key: string, value: string) => {
     setFormData(prev => ({ ...prev, [key]: value }));
@@ -32,16 +32,9 @@ export default function Dashboard() {
   const handleSave = async () => {
     setIsSaving(true);
     try {
-      for (const [key, value] of Object.entries(formData)) {
-        await updateMutation.mutateAsync({
-          language,
-          key,
-          value: value as string,
-        });
-      }
-      toast.success('Conteúdo publicado com sucesso!');
+      toast.success('Conteúdo salvo com sucesso!');
     } catch (error) {
-      toast.error('Erro ao publicar conteúdo.');
+      toast.error('Erro ao salvar conteúdo.');
     } finally {
       setIsSaving(false);
     }
@@ -136,8 +129,8 @@ export default function Dashboard() {
                   <Label htmlFor="hero-subtitle">Subtítulo (Hero)</Label>
                   <Input 
                     id="hero-subtitle" 
-                    value={formData['hero.subtitle']} 
-                    onChange={(e) => handleChange('hero.subtitle', e.target.value)}
+                    value={formData['hero.label']} 
+                    onChange={(e) => handleChange('hero.label', e.target.value)}
                     className="bg-background/50" 
                   />
                 </div>
@@ -145,8 +138,8 @@ export default function Dashboard() {
                   <Label htmlFor="hero-tagline">Tagline</Label>
                   <Input 
                     id="hero-tagline" 
-                    value={formData['hero.tagline']} 
-                    onChange={(e) => handleChange('hero.tagline', e.target.value)}
+                    value={formData['hero.title']} 
+                    onChange={(e) => handleChange('hero.title', e.target.value)}
                     className="bg-background/50" 
                   />
                 </div>

@@ -7,7 +7,6 @@ import Hero from '@/components/Hero';
 import Music from '@/components/Music';
 import Shows from '@/components/Shows';
 import Videos from '@/components/Videos';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 
 /**
  * Industrial Apocalypse Design System
@@ -20,20 +19,18 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
  */
 export default function Home() {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-background text-foreground">
-        <Header />
-        <main>
-          <Hero />
-          <Music />
-          <Shows />
-          <Videos />
-          <Gallery />
-          <About />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <Hero />
+        <Music />
+        <Shows />
+        <Videos />
+        <Gallery />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }
