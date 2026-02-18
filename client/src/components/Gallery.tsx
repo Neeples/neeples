@@ -33,8 +33,8 @@ export default function Gallery() {
         </div>
         
         {/* Instagram Feed - EmbedSocial Hashtag */}
-        <div className="w-full flex justify-center">
-          <div className="embedsocial-hashtag" data-ref="b27de234d270a50f1d97d482b8b2a7928a8d30ca"></div>
+        <div className="w-full">
+          <div className="embedsocial-hashtag" data-ref="b27de234d270a50f1d97d482b8b2a7928a8d30ca" style={{ width: '100%', maxWidth: '100%' }}></div>
         </div>
       </div>
     </section>

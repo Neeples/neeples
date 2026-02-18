@@ -12,6 +12,7 @@ export default function Header() {
     { key: 'nav.home', href: '#home' },
     { key: 'nav.music', href: '#music' },
     { key: 'nav.shows', href: '#shows' },
+    { key: 'nav.videos', href: '#videos' },
     { key: 'nav.gallery', href: '#gallery' },
     { key: 'nav.about', href: '#about' },
     { key: 'nav.contact', href: '#contact' },

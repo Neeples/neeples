@@ -4,6 +4,33 @@ import { Film } from 'lucide-react';
 export default function Videos() {
   const { t } = useLanguage();
   
+  const videos = [
+    {
+      id: 'highlight',
+      title: 'Destaque',
+      youtubeId: '5rvb63CXq6s',
+      featured: true,
+    },
+    {
+      id: 'spells',
+      title: 'Spells',
+      youtubeId: 'KJQ3_xVTyY4',
+      featured: false,
+      awards: [
+        {
+          name: '15ª Mostra Curta de Campinas',
+          link: 'https://www.mostracurta.art.br/selecionados/videoclipes/neeples-spells',
+          image: '/mostra-laurel.png',
+        },
+        {
+          name: 'Chroma Awards - Honourable Mention',
+          link: 'https://www.ChromaAwards.com',
+          image: '/chroma-laurel.png',
+        },
+      ],
+    },
+  ];
+  
   return (
     <section 
       id="videos"
@@ -14,26 +41,66 @@ export default function Videos() {
         <div className="text-center mb-16 md:mb-24">
           <div className="flex flex-col items-center justify-center mb-4">
             <Film className="text-accent mb-4" size={40} />
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter glitch" data-text={t('gallery.videos')}>
-              {t('gallery.videos')}
+            <h2 className="text-5xl md:text-6xl font-black tracking-tighter glitch" data-text={t('gallery.latestClip')}>
+              {t('gallery.latestClip')}
             </h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('gallery.latestClip')}
+            {t('gallery.description')}
           </p>
         </div>
         
-        {/* Video Player */}
-        <div className="max-w-4xl mx-auto aspect-video bg-black rounded-sm overflow-hidden fire-glow">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/KJQ3_xVTyY4"
-            title="Neeples - YouTube Videos"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+        {/* Videos Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          {videos.map((video) => (
+            <div 
+              key={video.id}
+              className={`flex flex-col ${video.featured ? 'lg:col-span-2' : ''}`}
+            >
+              {/* Video Container */}
+              <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+              
+              {/* Video Title and Awards */}
+              <div className="mt-6 flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-accent uppercase tracking-wider mb-4">
+                  {video.title}
+                </h3>
+                
+                {/* Awards/Laurels */}
+                {video.awards && video.awards.length > 0 && (
+                  <div className="flex gap-6 flex-wrap justify-center">
+                    {video.awards.map((award) => (
+                      <a
+                        key={award.name}
+                        href={award.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                        title={award.name}
+                      >
+                        <img
+                          src={award.image}
+                          alt={award.name}
+                          className="h-20 w-auto"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

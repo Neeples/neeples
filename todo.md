@@ -42,3 +42,10 @@
 - [x] Substituir widget do Instagram pelo Elfsight Instagram Feed
 - [x] Alterar texto "Latest music videos" para "Photos, videos and art" na seção Gallery
 - [x] Trocar widget do Instagram pelo EmbedSocial Hashtag
+
+## Ajustes Solicitados
+- [x] Adicionar link de vídeo no menu
+- [x] Ajustar widget do Instagram para ficar em tela cheia
+- [x] Incluir novo vídeo do YouTube (Destaque)
+- [x] Alterar "Latest Clip" para "Latest music videos"
+- [x] Adicionar laurels de prêmios abaixo do vídeo Spells
