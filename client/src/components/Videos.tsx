@@ -7,8 +7,7 @@ export default function Videos() {
   const videos = [
     {
       id: 'highlight',
-      title: 'New video – She May Own Me',
-      titlePt: 'Novo vídeo – She May Own Me',
+      title: 'She May Own Me',
       youtubeId: '5rvb63CXq6s',
       featured: true,
     },
@@ -51,80 +50,80 @@ export default function Videos() {
           </p>
         </div>
         
-        {/* Videos Grid */}
+        {/* Featured Video - Full Width */}
+        <div className="mb-16 md:mb-24">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold text-accent uppercase tracking-wider">
+              {t('videos.featured')}
+            </h3>
+          </div>
+          <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow max-w-4xl mx-auto">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${videos[0].youtubeId}`}
+                title={videos[0].title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+        
+        {/* Spells Video - Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Featured Video */}
-          <div className="lg:col-span-2">
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Video Container - Left Side */}
-              <div className="flex-1">
-                <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow">
-                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                    <iframe
-                      className="absolute top-0 left-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${videos[0].youtubeId}`}
-                      title={videos[0].title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-                <div className="mt-6 text-center lg:text-left">
-                  <h3 className="text-2xl font-bold text-accent uppercase tracking-wider">
-                    {videos[0].title}
-                  </h3>
-                </div>
-              </div>
-              
-              {/* Spells Video - Right Side */}
-              <div className="flex-1">
-                <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow">
-                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                    <iframe
-                      className="absolute top-0 left-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${videos[1].youtubeId}`}
-                      title={videos[1].title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-                
-                {/* Exhibitions and Mentions */}
-                <div className="mt-6">
-                  <h3 className="text-2xl font-bold text-accent uppercase tracking-wider mb-4">
-                    {t('videos.exhibitions')}
-                  </h3>
-                  <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-                    {t('videos.spellsDescription')}
-                  </p>
-                  
-                  {/* Awards/Laurels */}
-                  {videos[1].awards && videos[1].awards.length > 0 && (
-                    <div className="flex gap-6 flex-wrap justify-center lg:justify-start">
-                      {videos[1].awards.map((award) => (
-                        <a
-                          key={award.name}
-                          href={award.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:opacity-80 transition-opacity"
-                          title={award.name}
-                        >
-                          <img
-                            src={award.image}
-                            alt={award.name}
-                            className={award.name.includes('Chroma') ? 'h-28 w-auto' : 'h-24 w-auto'}
-                          />
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
+          {/* Video Column */}
+          <div className="flex flex-col">
+            <div className="relative w-full bg-card border border-border p-4 rounded-sm fire-glow">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${videos[1].youtubeId}`}
+                  title={videos[1].title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
+            <div className="mt-6 text-center lg:text-left">
+              <h3 className="text-2xl font-bold text-accent uppercase tracking-wider">
+                {videos[1].title}
+              </h3>
+            </div>
+          </div>
+          
+          {/* Exhibitions and Mentions Column */}
+          <div className="flex flex-col justify-start">
+            <h3 className="text-2xl font-bold text-accent uppercase tracking-wider mb-6">
+              {t('videos.exhibitions')}
+            </h3>
+            <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+              {t('videos.spellsDescription')}
+            </p>
+            
+            {/* Awards/Laurels */}
+            {videos[1].awards && videos[1].awards.length > 0 && (
+              <div className="flex gap-8 flex-wrap justify-center lg:justify-start items-center">
+                {videos[1].awards.map((award) => (
+                  <a
+                    key={award.name}
+                    href={award.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                    title={award.name}
+                  >
+                    <img
+                      src={award.image}
+                      alt={award.name}
+                      className={award.name.includes('Chroma') ? 'h-40 w-auto' : 'h-32 w-auto'}
+                    />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
