@@ -19,7 +19,7 @@ const translations = {
     'nav.about': 'SOBRE',
     'nav.contact': 'CONTATO',
     'hero.label': 'NOVO EP',
-    'hero.title': 'O Mundo Está Acabando E Este Sapo Sabe!',
+    'hero.title': 'The World Is Ending And This Frog Knows It!',
     'hero.cta': 'OUÇA AGORA',
     'music.title': 'Ouça Agora',
     'music.description': 'Últimas músicas e álbuns',

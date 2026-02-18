@@ -23,22 +23,10 @@ export default function Gallery() {
           </p>
         </div>
         
-        {/* Instagram Feed - Full Width with Sociablekit iframe */}
+        {/* Instagram Feed - Elfsight */}
         <div className="w-full flex justify-center">
-          <iframe
-            src="https://widgets.sociablekit.com/instagram-feed/iframe/25655257"
-            width="100%"
-            height="800"
-            frameBorder="0"
-            scrolling="yes"
-            title="Instagram Feed"
-            className="rounded-sm"
-            style={{
-              maxWidth: '100%',
-              border: 'none',
-              borderRadius: '4px'
-            }}
-          />
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div className="elfsight-app-7d91a8a4-d383-489b-857e-256399b5e4f0" data-elfsight-app-lazy></div>
         </div>
       </div>
     </section>
