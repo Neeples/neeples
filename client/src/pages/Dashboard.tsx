@@ -61,9 +61,7 @@ export default function Dashboard() {
         <Card className="max-w-md">
           <CardContent className="pt-6">
             <p className="text-center text-muted-foreground mb-4">Você não tem permissão para acessar o Dashboard.</p>
-            <Link href="/">
-              <a className="text-primary hover:underline">Voltar ao site</a>
-            </Link>
+            <Link href="/" className="text-primary hover:underline">Voltar ao site</Link>
           </CardContent>
         </Card>
       </div>
@@ -76,10 +74,8 @@ export default function Dashboard() {
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-border pb-4 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <Link href="/">
-                <a className="text-muted-foreground hover:text-primary transition-colors">
-                  <ArrowLeft size={20} />
-                </a>
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <ArrowLeft size={20} />
               </Link>
               <h1 className="text-3xl md:text-4xl font-bold text-primary tracking-tighter">NEEPLES DASHBOARD</h1>
             </div>

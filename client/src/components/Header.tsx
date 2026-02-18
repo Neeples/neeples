@@ -57,10 +57,8 @@ export default function Header() {
         
         {/* Dashboard Link */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link href="/dashboard">
-            <a className="p-2 text-muted-foreground hover:text-primary transition-colors" title="Dashboard">
-              <LayoutDashboard size={20} />
-            </a>
+          <Link href="/dashboard" className="p-2 text-muted-foreground hover:text-primary transition-colors" title="Dashboard">
+            <LayoutDashboard size={20} />
           </Link>
         </div>
 

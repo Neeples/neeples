@@ -34,3 +34,7 @@
 - [ ] Testar em ambiente de produção
 - [ ] Configurar domínio personalizado
 - [ ] Publicar via Manus
+
+
+## Bugs
+- [x] Corrigir erro de elemento <a> aninhado dentro de outro <a>
