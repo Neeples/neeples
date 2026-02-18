@@ -40,3 +40,5 @@
 - [x] Corrigir erro de elemento <a> aninhado dentro de outro <a>
 - [x] Corrigir botão de idioma para mudar todos os textos, não apenas About
 - [x] Substituir widget do Instagram pelo Elfsight Instagram Feed
+- [x] Alterar texto "Latest music videos" para "Photos, videos and art" na seção Gallery
+- [x] Trocar widget do Instagram pelo EmbedSocial Hashtag

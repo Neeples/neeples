@@ -1,8 +1,17 @@
+import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Instagram } from 'lucide-react';
 
 export default function Gallery() {
   const { t } = useLanguage();
+  
+  useEffect(() => {
+    // Load EmbedSocial script
+    const script = document.createElement('script');
+    script.src = 'https://embedsocial.com/cdn/ht.js';
+    script.async = true;
+    document.head.appendChild(script);
+  }, []);
   
   return (
     <section 
@@ -23,10 +32,9 @@ export default function Gallery() {
           </p>
         </div>
         
-        {/* Instagram Feed - Elfsight */}
+        {/* Instagram Feed - EmbedSocial Hashtag */}
         <div className="w-full flex justify-center">
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div className="elfsight-app-7d91a8a4-d383-489b-857e-256399b5e4f0" data-elfsight-app-lazy></div>
+          <div className="embedsocial-hashtag" data-ref="b27de234d270a50f1d97d482b8b2a7928a8d30ca"></div>
         </div>
       </div>
     </section>
