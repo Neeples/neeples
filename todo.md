@@ -49,3 +49,11 @@
 - [x] Incluir novo vídeo do YouTube (Destaque)
 - [x] Alterar "Latest Clip" para "Latest music videos"
 - [x] Adicionar laurels de prêmios abaixo do vídeo Spells
+
+## Ajustes Adicionais (Rodada 2)
+- [x] Reorganizar seção Videos: "Videos" como título, "Latest music videos" como subtítulo
+- [x] Adicionar "New video – She May Own Me" como nome do vídeo em destaque
+- [x] Reorganizar layout Spells com coluna "Exhibitions and mentions"
+- [x] Traduzir novo conteúdo para português
+- [x] Aumentar tamanho laurel Chroma e alinhar melhor
+- [x] Adicionar favicon dos horns up

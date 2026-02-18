@@ -47,6 +47,11 @@ const translations = {
     'merch.comingSoon': 'Em Breve',
     'gallery.latestClip': 'Últimos clipes musicais',
     'gallery.videos': 'Vídeos',
+    'videos.title': 'Vídeos',
+    'videos.subtitle': 'Últimos clipes musicais',
+    'videos.featured': 'Novo vídeo – She May Own Me',
+    'videos.exhibitions': 'Exibições e menções',
+    'videos.spellsDescription': 'O vídeo de Spells foi selecionado para o 15º Festival de Curtas de Campinas e recebeu uma menção honrosa no Chroma Awards.',
   },
   'en': {
     'nav.home': 'HOME',
@@ -84,6 +89,11 @@ const translations = {
     'merch.comingSoon': 'Coming Soon',
     'gallery.latestClip': 'Latest music videos',
     'gallery.videos': 'Videos',
+    'videos.title': 'Videos',
+    'videos.subtitle': 'Latest music videos',
+    'videos.featured': 'New video – She May Own Me',
+    'videos.exhibitions': 'Exhibitions and mentions',
+    'videos.spellsDescription': 'The video for Spells was selected for the 15th Campinas Short Film Festival and received an honorable mention at the Chroma Awards.',
   },
 };
 
