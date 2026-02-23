@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 function Router() {
   return (
     <Switch>
-      <WRouter base="/neeples">
+      <WRouter base="./">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/404" component={Home} />
