@@ -191,8 +191,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-  base: "/neeples/",
-});
-export default defineConfig({
   base: "./",
-})
+});
