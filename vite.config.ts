@@ -193,3 +193,6 @@ export default defineConfig({
   },
   base: "/neeples/",
 });
+export default defineConfig({
+  base: "./",
+})
