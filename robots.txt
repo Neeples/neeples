@@ -9,4 +9,4 @@ Disallow: /node_modules/
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://neeplesweb-imxazpsb.manus.space/sitemap.xml
+Sitemap: https://neeples.com.br/sitemap.xml
