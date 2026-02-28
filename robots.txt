@@ -1,0 +1,12 @@
+# Robots.txt for Neeples Official Website
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+
+# Crawl delay (optional - in seconds)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://neeples.com.br/sitemap.xml
